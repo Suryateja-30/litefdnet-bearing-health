@@ -1,12 +1,35 @@
+# LiteFDNet: Bearing Health Monitoring using Deep Learning
 
-# Project Execution Steps
-
-## Bearing_Fault_Diagnosis
-
-Follow the steps carefully to run the project successfully.
+## 📌 Description
+This project presents a resource-efficient deep neural network (LiteFDNet) for bearing fault detection using current sensor data. It focuses on achieving high accuracy while maintaining low computational cost.
 
 ---
 
+## 🎯 Objective
+To detect and classify bearing faults efficiently using lightweight deep learning techniques and current signal analysis.
+
+---
+
+## 🚀 Features
+- Bearing fault detection using deep learning
+- Lightweight and efficient model (LiteFDNet)
+- Current sensor data analysis
+- Web-based interface using Django
+- Easy-to-use system for monitoring and prediction
+
+---
+
+## 🛠️ Technologies Used
+- Python  
+- Machine Learning / Deep Learning  
+- Django (Backend)  
+- HTML, CSS (Frontend)  
+
+---
+
+---
+
+## 📂 Project Structure
 ## Step 1: Download the Repository
 
 * Download the project ZIP file
@@ -14,7 +37,7 @@ Follow the steps carefully to run the project successfully.
 * Clone using git:
 
 ```bash
-git clone https://github.com/vijayvardhan-killi/LiteFDNet.git
+git clone https://github.com/Suryateja-30/litefdnet-bearing-health.git
 ```
 
 ---
