@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<!-- Changed Project Title -->
+<title>A Resource-Efficient Deep Neural Framework for Bearing Health Monitoring Using Current Sensor Analytics</title>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+<meta name="keywords"
+content="Bearing Fault Diagnosis, Bearing Health Monitoring, Current Sensor Analytics, Deep Learning, Predictive Maintenance, Explainable AI" />
+
+<meta name="description"
+content="Smart bearing health monitoring system using current sensor analytics and lightweight deep learning." />
+
+<link href="{% static 'img/favicon.ico' %}" rel="icon" />
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="{% static 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet"/>
+<link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet"/>
+
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+<div class="container">
+<div class="row align-items-center">
+
+<!-- LOGO TITLE CHANGED -->
+<div class="col-lg-4 col-md-12">
+<div class="logo">
+<a href="{% url 'index' %}">
+<h1><i class="fas fa-cogs"></i> FaultSense AI</h1>
+</a>
+</div>
+</div>
+
+<div class="col-lg-8 col-md-7 d-none d-lg-block">
+<div class="row">
+
+<div class="col-4">
+<div class="top-bar-item">
+<div class="top-bar-icon">
+<i class="fa fa-microchip"></i>
+</div>
+<div class="top-bar-text">
+<h3>Framework</h3>
+<p>Deep Neural Network</p>
+</div>
+</div>
+</div>
+
+<div class="col-4">
+<div class="top-bar-item">
+<div class="top-bar-icon">
+<i class="fa fa-chart-line"></i>
+</div>
+<div class="top-bar-text">
+<h3>Input</h3>
+<p>Current Sensor Signals</p>
+</div>
+</div>
+</div>
+
+<div class="col-4">
+<div class="top-bar-item">
+<div class="top-bar-icon">
+<i class="fa fa-brain"></i>
+</div>
+<div class="top-bar-text">
+<h3>Goal</h3>
+<p>Fault Prediction</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Navbar -->
+<div class="nav-bar">
+<div class="container">
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+<a href="{% url 'index' %}" class="navbar-brand">
+<i class="fas fa-microchip mr-2"></i>FaultSense AI System
+</a>
+
+<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarCollapse">
+
+<div class="navbar-nav mr-auto">
+
+<a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+<a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+<a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+
+</div>
+
+<div class="navbar-nav ml-auto">
+
+<a href="{% url 'admin' %}" class="nav-item nav-link">Admin</a>
+<a href="{% url 'login' %}" class="nav-item nav-link">User</a>
+
+</div>
+
+</div>
+</nav>
+</div>
+</div>
+
+<!-- Slider -->
+<div class="carousel">
+<div class="container-fluid">
+<div class="owl-carousel">
+
+<div class="carousel-item">
+<div class="carousel-img">
+<img src="{% static 'img/bb1.jpg' %}" alt="">
+</div>
+
+<div class="carousel-text">
+<h1>Smart Bearing Monitoring</h1>
+<p>
+AI-powered bearing health diagnosis using current sensor analytics.
+</p>
+<a class="btn btn-custom" href="{% url 'about' %}">Read More</a>
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="carousel-img">
+<img src="{% static 'img/bb2.jpg' %}" alt="">
+</div>
+
+<div class="carousel-text">
+<h1>Fast Fault Detection</h1>
+<p>
+Detect healthy and faulty bearing conditions accurately.
+</p>
+</div>
+</div>
+
+<div class="carousel-item">
+<div class="carousel-img">
+<img src="{% static 'img/bb1.jpg' %}" alt="">
+</div>
+
+<div class="carousel-text">
+<h1>Explainable AI Results</h1>
+<p>
+Transparent and intelligent industrial prediction system.
+</p>
+<a class="btn btn-custom" href="{% url 'login' %}">Try Demo</a>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- About -->
+<div class="about">
+<div class="container">
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+<div class="about-img">
+<img src="{% static 'img/3.jpg' %}" alt="">
+</div>
+</div>
+
+<div class="col-lg-6">
+
+<div class="section-header text-left">
+<p>ABSTRACT</p>
+
+<h2>
+Bearing Health Monitoring Using Current Sensor Analytics
+</h2>
+</div>
+
+<div class="about-content">
+
+<p>
+Bearings are important components in rotating machinery. Their failure can lead to production loss and downtime.
+</p>
+
+<p>
+This system uses current sensor data and deep learning for smart diagnosis.
+</p>
+
+<p>
+It reduces maintenance cost and improves machine reliability.
+</p>
+
+<ul>
+<li>Low Cost Monitoring</li>
+<li>Fast Prediction</li>
+<li>AI Based Results</li>
+<li>Industrial Ready</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<div class="container">
+
+<div class="row">
+
+<div class="col-lg-4 col-md-6">
+<div class="footer-contact">
+<h2>Contact</h2>
+<p><i class="fa fa-map-marker-alt"></i> Surampalem, Andhra Pradesh</p>
+<p><i class="fa fa-phone-alt"></i> +91 8019266773</p>
+<p><i class="fa fa-envelope"></i> gunipesuryateja77@gmail.com</p>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+<div class="footer-link">
+<h2>Navigation</h2>
+<a href="{% url 'index' %}">Home</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'admin' %}">Admin</a>
+<a href="{% url 'login' %}">User</a>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+<div class="footer-link">
+<h2>Project Info</h2>
+<p>
+AI based smart bearing fault diagnosis system using sensor analytics.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="container copyright">
+<p>
+&copy; 2026 Academic Project | Pragati Engineering College
+</p>
+</div>
+
+</div>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<div id="loader" class="show">
+<div class="loader"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
+```
+

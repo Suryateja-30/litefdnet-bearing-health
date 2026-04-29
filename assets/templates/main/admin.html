@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin Login | FaultSense AI</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      name="description"
+      content="Admin login page for FaultSense AI smart fault detection system using current sensor analytics."
+    />
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Libraries -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'lib/flaticon/font/flaticon.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    <style>
+      body {
+        background-image: url("{% static 'images/jjn.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      .login-box {
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 12px;
+      }
+
+      .login-box .form-control {
+        border-radius: 6px;
+      }
+
+      .section-header h2 {
+        font-size: 38px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Bar Start -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <!-- LOGO CHANGED -->
+          <div class="col-lg-4 col-md-12">
+            <div class="logo">
+              <a href="{% url 'index' %}">
+                <h1>
+                  <i class="fas fa-microchip"></i>
+                  FaultSense AI
+                </h1>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-8 col-md-7 d-none d-lg-block">
+            <div class="row">
+              <div class="col-4">
+                <div class="top-bar-item">
+                  <div class="top-bar-icon">
+                    <i class="fa fa-brain"></i>
+                  </div>
+                  <div class="top-bar-text">
+                    <h3>Framework</h3>
+                    <p>Deep Neural Network</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="top-bar-item">
+                  <div class="top-bar-icon">
+                    <i class="fa fa-wave-square"></i>
+                  </div>
+                  <div class="top-bar-text">
+                    <h3>Input Data</h3>
+                    <p>Current Sensor Analytics</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="top-bar-item">
+                  <div class="top-bar-icon">
+                    <i class="fa fa-shield-alt"></i>
+                  </div>
+                  <div class="top-bar-text">
+                    <h3>Purpose</h3>
+                    <p>Secure Monitoring</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Navbar Start -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+          <!-- NAVBAR TITLE CHANGED -->
+          <a href="{% url 'index' %}" class="navbar-brand">
+            FaultSense AI
+          </a>
+
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+
+            <div class="navbar-nav mr-auto">
+              <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+              <a href="{% url 'about' %}" class="nav-item nav-link">Project Overview</a>
+              <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+            </div>
+
+            <div class="navbar-nav">
+              <a href="{% url 'admin' %}" class="nav-item nav-link active">Admin</a>
+              <a href="{% url 'login' %}" class="nav-item nav-link">User</a>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Admin Login Start -->
+    <div class="about py-5">
+      <div class="container">
+
+        <div class="section-header text-center">
+          <p>Authorized Access</p>
+          <h2>Administrator Login</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="login-box shadow-lg p-5">
+
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group">
+                  <label><strong>Admin Username</strong></label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="adminName"
+                    placeholder="Enter Username"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label><strong>Password</strong></label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="adminPwd"
+                    placeholder="Enter Password"
+                    required
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-custom btn-block py-2">
+                  Login to Dashboard
+                </button>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Admin Login End -->
+
+    <!-- Footer Start -->
+    <div class="footer">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-contact">
+              <h2>Contact</h2>
+              <p><i class="fa fa-map-marker-alt"></i> Surampalem, Andhra Pradesh</p>
+              <p><i class="fa fa-phone-alt"></i> +91 8019266773</p>
+              <p><i class="fa fa-envelope"></i> gunipesuryateja77@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-link">
+              <h2>Navigation</h2>
+              <a href="{% url 'index' %}">Home</a>
+              <a href="{% url 'about' %}">About</a>
+              <a href="{% url 'admin' %}">Admin</a>
+              <a href="{% url 'login' %}">User</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <div class="footer-link">
+              <h2>About Project</h2>
+              <p class="footer_text">
+                FaultSense AI improves fault detection accuracy using intelligent
+                current sensor analytics and deep learning.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container copyright">
+        <p>
+          &copy; 2026 Academic Project, Pragati Engineering College. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to top -->
+    <a href="#" class="back-to-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="loader" class="show">
+      <div class="loader"></div>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>
+```

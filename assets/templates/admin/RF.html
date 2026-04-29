@@ -1,0 +1,327 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bearing Fault Diagnosis</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Libraries -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'lib/flaticon/font/flaticon.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Top Bar Start -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-md-12">
+            <div class="logo">
+              <a href="{% url 'index' %}">
+                <h1><i class="fas fa-cog"></i>LiteFDNet</h1>
+                <!-- <img src="{% static 'img/logo.jpg' %}" alt="Logo"> -->
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-7 d-none d-lg-block">
+            <div class="row">
+              <div class="col-4">
+                <div class="top-bar-item">
+                  <div class="top-bar-icon">
+                    <i class="fa fa-microchip"></i>
+                  </div>
+                  <div class="top-bar-text">
+                    <h3>Model</h3>
+                    <p>LiteFDNet (Lightweight CNN)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="top-bar-item">
+                  <div class="top-bar-icon">
+                    <i class="fa fa-chart-line"></i>
+                  </div>
+                  <div class="top-bar-text">
+                    <h3>Input Type</h3>
+                    <p>Time Domain Features (TDF)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="top-bar-item">
+                  <div class="top-bar-icon">
+                    <i class="fa fa-brain"></i>
+                  </div>
+                  <div class="top-bar-text">
+                    <h3>Goal</h3>
+                    <p>Fast & Accurate Fault Detection</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar Start -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+          <!-- Brand -->
+          <a
+            href="{% url 'admindashboard' %}"
+            class="navbar-brand font-weight-bold"
+          >
+            LiteFDNet Admin
+          </a>
+
+          <!-- Mobile Toggle -->
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar Content -->
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarCollapse"
+          >
+            <!-- LEFT SIDE -->
+            <div class="navbar-nav mr-auto">
+              <a href="{% url 'admindashboard' %}" class="nav-item nav-link">
+                Dashboard
+              </a>
+
+              <!-- Models Dropdown -->
+              <div class="nav-item dropdown">
+                <a
+                  href="#"
+                  class="nav-link dropdown-toggle active"
+                  data-toggle="dropdown"
+                >
+                  Models
+                </a>
+
+                <div class="dropdown-menu">
+                  <a href="{% url 'PlainNet_btn' %}" class="dropdown-item btn">
+                    PlainNet
+                  </a>
+
+                  <a href="{% url 'RF_btn' %}" class="dropdown-item btn">
+                    RF
+                  </a>
+
+                  <a href="{% url 'LiteFDNet_btn' %}" class="dropdown-item btn">
+                    LiteFDNet
+                  </a>
+                </div>
+              </div>
+
+              <a href="{% url 'admingraph' %}" class="nav-item nav-link">
+                Graph Analysis
+              </a>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="navbar-nav">
+              <a href="{% url 'adminlogout' %}" class="nav-item nav-link">
+                Logout
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Nav Bar End -->
+
+    <!-- RF Section -->
+    <div class="about py-4">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header mx-auto text-center mb-4">
+          <p>Model Execution</p>
+          <h2>RF Model</h2>
+        </div>
+
+        <!-- Run Button Card -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-5 col-md-6">
+            <div class="card shadow-sm text-center">
+              <div class="card-body py-4">
+                <form action="{% url 'RF_btn' %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-custom px-5">
+                    Run Algorithm
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics Card -->
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h4 class="text-center font-weight-bold mb-4">
+                  Performance Metrics
+                </h4>
+
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered table-hover text-center mb-0"
+                  >
+                    <thead class="bg-dark text-white">
+                      <tr>
+                        <th>Accuracy</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1 Score</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ accuracy|default:"--" }}</td>
+                        <td>{{ precision|default:"--" }}</td>
+                        <td>{{ recall|default:"--" }}</td>
+                        <td>{{ f1_score|default:"--" }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Contact -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-contact">
+              <h2>Contact Information</h2>
+              <p>
+                <i class="fa fa-map-marker-alt"></i> Surampalem, Andhra Pradesh
+              </p>
+              <p><i class="fa fa-phone-alt"></i> +91 0000000000</p>
+              <p><i class="fa fa-envelope"></i> user@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-link">
+              <h2>Navigation</h2>
+              <a href="{% url 'index' %}">Home</a>
+              <a href="{% url 'about' %}">About</a>
+              <a href="{% url 'admin' %}">Admin Login</a>
+              <a href="{% url 'login' %}">User Login</a>
+              <a href="{% url 'contact' %}">Contacts</a>
+            </div>
+          </div>
+
+          <!-- About Project -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-link">
+              <h2>About This Project</h2>
+              <p class="footer_text">
+                This project implements LiteFDNet, a lightweight deep learning
+                model for current sensor-based bearing fault diagnosis. It
+                analyzes electrical signal data to accurately detect bearing
+                faults and provides performance metrics for evaluation and
+                comparison.
+              </p>
+            </div>
+          </div>
+
+          <!-- Newsletter / Updates -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-newsletter">
+              <h2>Project Updates</h2>
+              <form>
+                <input class="form-control" placeholder="Full Name" />
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="Email Address"
+                />
+                <button type="submit" class="btn btn-custom">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright">
+        <p>
+          &copy; 2026 Academic Project, Pragati Engineering College. All Rights
+          Reserved.
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- Pre Loader -->
+    <div id="loader" class="show">
+      <div class="loader"></div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+    <script src="{% static 'mail/contact.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

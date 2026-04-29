@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Contact | FaultSense AI System</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+<!-- Favicon -->
+<link href="{% static 'img/favicon.ico' %}" rel="icon" />
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<!-- CSS Libraries -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
+<link href="{% static 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet"/>
+<link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet"/>
+
+<!-- Template Stylesheet -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+
+<style>
+.team-card{
+background:#ffffff;
+padding:25px;
+border-radius:12px;
+border:1px solid #eaeaea;
+transition:0.3s ease;
+height:100%;
+}
+.team-card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 25px rgba(0,0,0,0.08);
+}
+.team-card h5{
+font-weight:700;
+color:#e81c2e;
+}
+.guide-card{
+background:#ffffff;
+border-radius:14px;
+border:1px solid #e5e5e5;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+transition:0.3s ease;
+}
+.guide-card:hover{
+transform:translateY(-5px);
+}
+.guide-info p{
+margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Top Bar Start -->
+<div class="top-bar">
+<div class="container">
+<div class="row align-items-center">
+
+<div class="col-lg-4 col-md-12">
+<div class="logo">
+<a href="{% url 'index' %}">
+<h1><i class="fas fa-cogs"></i> FaultSense AI</h1>
+</a>
+</div>
+</div>
+
+<div class="col-lg-8 col-md-7 d-none d-lg-block">
+<div class="row">
+
+<div class="col-4">
+<div class="top-bar-item">
+<div class="top-bar-icon"><i class="fa fa-brain"></i></div>
+<div class="top-bar-text">
+<h3>Framework</h3>
+<p>Deep Neural Network</p>
+</div>
+</div>
+</div>
+
+<div class="col-4">
+<div class="top-bar-item">
+<div class="top-bar-icon"><i class="fa fa-wave-square"></i></div>
+<div class="top-bar-text">
+<h3>Input Data</h3>
+<p>Current Sensor Analytics</p>
+</div>
+</div>
+</div>
+
+<div class="col-4">
+<div class="top-bar-item">
+<div class="top-bar-icon"><i class="fa fa-chart-line"></i></div>
+<div class="top-bar-text">
+<h3>Goal</h3>
+<p>Efficient Fault Detection</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- Top Bar End -->
+
+<!-- Navbar -->
+<div class="nav-bar">
+<div class="container">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+
+<a href="{% url 'index' %}" class="navbar-brand">
+FaultSense AI System
+</a>
+
+<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarCollapse">
+
+<div class="navbar-nav mr-auto">
+<a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+<a href="{% url 'about' %}" class="nav-item nav-link">Project Overview</a>
+<a href="{% url 'contact' %}" class="nav-item nav-link active">Contact</a>
+</div>
+
+<div class="navbar-nav ml-auto">
+<a href="{% url 'admin' %}" class="nav-item nav-link">Admin</a>
+<a href="{% url 'login' %}" class="nav-item nav-link">User</a>
+</div>
+
+</div>
+</nav>
+</div>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<h2>Contact Us</h2>
+</div>
+<div class="col-12">
+<a href="{% url 'index' %}">Home</a>
+<a href="#">Contact</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact py-5">
+<div class="container">
+
+<div class="section-header text-center mb-5">
+<p>Project Team</p>
+<h2>Research Team & Contact Details</h2>
+</div>
+
+<!-- Team Members -->
+<div class="row">
+
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="team-card">
+<h5>Gunipe Surya Teja</h5>
+<p><strong>Roll No:</strong> 22A31A0509</p>
+<p><i class="fas fa-envelope text-danger mr-2"></i>gunipesuryateja77@gmail.com</p>
+<p><i class="fas fa-phone-alt text-danger mr-2"></i>8019266773</p>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="team-card">
+<h5>Gadiyakari Karthik</h5>
+<p><strong>Roll No:</strong> 22A31A0537</p>
+<p><i class="fas fa-envelope text-danger mr-2"></i>karthik.gadiyakari@gmail.com</p>
+<p><i class="fas fa-phone-alt text-danger mr-2"></i>7013363078</p>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4 mb-4">
+<div class="team-card">
+<h5>Hareesh Jyothula</h5>
+<p><strong>Roll No:</strong> 22A31A0540</p>
+<p><i class="fas fa-envelope text-danger mr-2"></i>hareeshjyothula28@gmail.com</p>
+<p><i class="fas fa-phone-alt text-danger mr-2"></i>6281782199</p>
+</div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<div class="container">
+<div class="row">
+
+<div class="col-lg-4 col-md-6">
+<div class="footer-contact">
+<h2>Contact</h2>
+<p><i class="fa fa-map-marker-alt"></i> Surampalem, Andhra Pradesh</p>
+<p><i class="fa fa-phone-alt"></i> +91 8019266773</p>
+<p><i class="fa fa-envelope"></i> gunipesuryateja77@gmail.com</p>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6">
+<div class="footer-link">
+<h2>Navigation</h2>
+<a href="{% url 'index' %}">Home</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'admin' %}">Admin</a>
+<a href="{% url 'login' %}">User</a>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-12">
+<div class="footer-link">
+<h2>About Project</h2>
+<p>
+FaultSense AI enables intelligent fault detection with reduced computational complexity.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="container copyright">
+<p>&copy; 2026 Academic Project, Pragati Engineering College. All Rights Reserved.</p>
+</div>
+</div>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
